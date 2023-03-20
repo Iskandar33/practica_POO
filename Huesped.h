@@ -27,6 +27,7 @@ public:
     int getId();
     string getNombre();
     void mostrarInfo();
+    void actualizarCal(int calificacion);
     
 };
 #endif

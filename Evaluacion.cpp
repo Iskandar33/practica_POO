@@ -13,9 +13,9 @@ void Evaluacion::setPropietario(Propietario* pPropietario){
 
 void Evaluacion::mostrarInfo(){
     if(this->personaDirigida == "Propietario"){
-        cout << "La evaluación del huesped" << this->pHuesped->getNombre() << " al propietario " << this->pPropietario->getNombre() << " tiene una calificación de " << this->calificacion << "y de comentario " << this->comentarios << endl;
+        cout << "La evaluación del huesped " << this->pHuesped->getNombre() << " al propietario " << this->pPropietario->getNombre() << " tiene una calificación de " << this->calificacion << " y de comentario " << this->comentarios << endl;
     }
     if(this->personaDirigida == "Huesped"){
-        cout << "La evaluación del propietario" << this->pPropietario->getNombre() << " al propietario " << this->pHuesped->getNombre() << " tiene una calificación de " << this->calificacion << "y de comentario " << this->comentarios << endl;
+        cout << "La evaluación del propietario " << this->pPropietario->getNombre() << " al propietario " << this->pHuesped->getNombre() << " tiene una calificación de " << this->calificacion << " y de comentario " << this->comentarios << endl;
     }
 }

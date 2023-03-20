@@ -15,8 +15,7 @@ using std::getline;
 
 void mostrarMenu(Sistema* sistemaBnb){
     int opc = 0;
-    do
-    {
+    do{
         cout << "\n**** Bienvenidos a la aplicación Airbnb de Manizales ****\n";
         cout << "1. Agregar propietario\n";
         cout << "2. Mostrar la lista de personas inscritas en el sistema actualmente\n";
@@ -28,8 +27,7 @@ void mostrarMenu(Sistema* sistemaBnb){
 
         cin >> opc;
 
-        switch(opc)
-        {
+        switch(opc){
             case 1:
                 sistemaBnb->agregarPropietario();
                 break;
@@ -58,7 +56,6 @@ int main(){
     Sistema* pSistema = new Sistema();
     mostrarMenu(pSistema);
 
-    // Debo usar el delete explicitamente cuando tengo objetos creados en el heap, ya que estos no se eliminan automáticamente.
     delete pSistema;
     return 0;
 }

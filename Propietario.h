@@ -29,6 +29,7 @@ public:
     Hogar* getHogar();
     string getNombre();
     void mostrarInfo();
-
+    void actualizarCal(int calificacion);
+    
 };
 #endif

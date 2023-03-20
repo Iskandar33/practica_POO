@@ -1,7 +1,7 @@
 #include "Sistema.h"
 
 void Sistema::agregarPropietario(){
-    int puntaje = 0, recibirHuesped = 0;
+    int puntaje = 0, recibirHuesped = 1;
     string nombre, sexo, fechaNac;
     cout << "Ingrese el nombre: " << endl;
     cin.ignore();
@@ -56,6 +56,7 @@ Huesped* Sistema::agregarHuesped(){
     Huesped* pHuespedTemp = new Huesped(this->acumUsuarios, nombre, sexo, fechaNac, puntaje, ubicFamiliar, lugarNac);
     this->mapaHuesped.insert(make_pair(this->acumUsuarios, pHuespedTemp));
     this->acumUsuarios++;
+    return pHuespedTemp;
 }
 
 void Sistema::mostrarPersonasInscritas(){
@@ -78,7 +79,8 @@ void Sistema::mostrarInfoPropHogar(){
     cout << "La lista de los propietarios con sus hospedajes se va a mostrar para su elección \n" << endl;
     for(itMap = this->mapaProp.begin(); itMap != this->mapaProp.end(); ++itMap){
         if(itMap->second->recibirHuesped == 1){
-            cout << "La ID del propietario es: " << itMap->first << "\n El hospedaje a su nombre es: " << endl;
+            cout << "La ID del propietario es: " << itMap->first << "\nEl hospedaje a su nombre es: " << endl;
+            cout << "Hogar de " << itMap->second->getNombre() << endl;
             itMap->second->getHogar()->mostrarInfoHogar();
         }
     }
@@ -160,6 +162,7 @@ void Sistema::agregarEvaluacion(Reserva* pReserva){
     cin.ignore();
     getline(cin, comentarios, '\n'); 
     Evaluacion* pEvaluacionHP = new Evaluacion(fecha, calificacion, comentarios, personaDirigidaP, pReserva->getPropietario(), pReserva->getHuesped());
+    pReserva->getHuesped()->actualizarCal(calificacion);
     this->mapaEvaluaciones.insert(make_pair(pReserva->getHuesped()->getId(), pEvaluacionHP));
 
     cout << "Evaluación del propietario al huesped: " << endl;
@@ -172,6 +175,7 @@ void Sistema::agregarEvaluacion(Reserva* pReserva){
     cin.ignore();
     getline(cin, comentarios, '\n'); 
     Evaluacion* pEvaluacionPH = new Evaluacion(fecha, calificacion, comentarios, personaDirigidaH, pReserva->getPropietario(), pReserva->getHuesped());
+    pReserva->getPropietario()->actualizarCal(calificacion);
     this->mapaEvaluaciones.insert(make_pair(pReserva->getPropietario()->getId(), pEvaluacionPH));
 }
 

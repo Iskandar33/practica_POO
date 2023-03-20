@@ -20,5 +20,10 @@ string Propietario::getNombre(){
 }
 
 void Propietario::mostrarInfo(){
-    cout << "Propietario de nombre " << this->nombre << "e ID " << this->id << endl;
+    cout << "Propietario de nombre " << this->nombre << " e ID " << this->id << endl;
+}
+
+void Propietario::actualizarCal(int calificacion){
+    int puntajeN = (this->puntaje + calificacion) / 2;
+    this->puntaje = puntajeN;
 }

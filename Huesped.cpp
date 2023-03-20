@@ -12,5 +12,10 @@ string Huesped::getNombre(){
 }
 
 void Huesped::mostrarInfo(){
-    cout << "Huesped de nombre " << this->nombre << "e ID " << this->id << endl;
+    cout << "Huesped de nombre " << this->nombre << " e ID " << this->id << endl;
+}
+
+void Huesped::actualizarCal(int calificacion){
+    int puntajeN = (this->puntaje + calificacion) / 2;
+    this->puntaje = puntajeN;
 }

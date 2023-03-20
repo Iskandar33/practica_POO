@@ -13,5 +13,5 @@ void Hogar::mostrarInfoHogar(){
     else{
         alojarB = "No";
     }
-    cout << "Hogar: Número de camas disponible: " << numCamas << "Alojamiento de bebes: " << alojarB << "Dirección del hogar: " << direccion << "Descripción del hogar: " << descHogar << endl; 
+    cout << "Número de camas disponible: " << numCamas << "\nAlojamiento de bebes: " << alojarB << "\nDirección del hogar: " << direccion << "\nDescripción del hogar: " << descHogar << endl; 
 }
