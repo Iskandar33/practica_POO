@@ -1,4 +1,4 @@
-file(GLOB_RECURSE SOURCES )  #Todas las fuentes sin el Main
+file(GLOB_RECURSE SOURCES Sistema.cpp Propietario.cpp Huesped.cpp Hogar.cpp Evaluacion.cpp Reserva.cpp Sistema.h Propietario.h Huesped.h Hogar.h Evaluacion.h Reserva.h)  #Todas las fuentes sin el Main
 
 set(BINARY ${CMAKE_PROJECT_NAME})  # El nombre va a a estar en el CMake principal
 
@@ -6,7 +6,7 @@ set(BINARY ${CMAKE_PROJECT_NAME})  # El nombre va a a estar en el CMake principa
 set(SOURCES ${SOURCES})
 
 # STATIC libraries are archives of object files for use when linking other targets
-#add_library(${CMAKE_PROJECT_NAME}_lib Calculator.h Calculator.cpp)  #construye una libraria que tiene los test que vamos a ejecutar
+#add_library(${CMAKE_PROJECT_NAME}_lib Sistema.h Propietario.h Huesped.h Hogar.h Evaluacion.h Reserva.h)  #construye una libraria que tiene los test que vamos a ejecutar
 
 add_library(${CMAKE_PROJECT_NAME}_lib ${SOURCES})
 

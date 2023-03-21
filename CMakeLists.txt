@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(hospedaje)
+project(practica_POO)
 
 include_directories(lib)
 include_directories(src)
@@ -11,4 +11,4 @@ add_subdirectory(test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(hospedaje main.cpp)
+#add_executable(practica_POO src/Sistema.cpp src/Propietario.cpp src/Huesped.cpp src/Hogar.cpp src/Evaluacion.cpp src/Reserva.cpp src/Main.cpp)
